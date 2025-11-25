@@ -1,0 +1,531 @@
+html {
+  scroll-behavior: smooth;
+}
+* {
+  cursor: none;
+}
+body{
+ background:rgb(1, 1, 26);
+ opacity: 0;
+ font-family:'Vazir', sans-serif;
+
+}
+
+.loader-site{
+width: 100%;
+height: 100%;
+background-color: rgb(2, 1, 35);
+position: fixed;
+top: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+z-index: 1000;
+}
+
+.visible{
+  opacity: 1;
+  visibility:visible;
+  transition: opacity 0.5s ease;
+}
+.hide{
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease;
+}
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #9fe3ee;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.cursour{
+    width: 20px;
+    height: 20px;
+    background-color: rgb(180, 230, 249);
+    border-radius: 50%;
+    position: fixed;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+    transition: transform 0.1s ease;
+    z-index: 9999;
+      filter: drop-shadow(0 0 8px rgb(138, 171, 236));
+}
+
+.cursor-hovered{
+     transform: scale(1.3);
+  filter: drop-shadow(0 0 10px skyblue);
+    pointer-events: none;
+    transition: transform 0.25s ease;
+
+
+}
+.main-page{
+  position: relative;
+}
+.menu{
+  right: 0;
+  position: fixed;
+  width: 100px;
+  height: 80px;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.icons{
+  background-color: transparent;
+  width: 40px;
+  height: 40px;  
+  border: none;
+  border-radius: 20px;
+  position: relative;
+  transition: all 0.5 ease;
+  padding: 40px;
+}
+.icones-text{
+  opacity: 0;
+  color: rgb(193, 211, 227);
+  margin-right: 30px;
+  position: absolute;
+  left: -50%;
+  top: 70%;
+  font-size: 15px;
+  filter: drop-shadow(0 0 0 transparent); 
+}
+.icons img{
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s ease;
+
+}
+
+.icons:hover{
+  width: 70px;
+  border-radius: 50px;
+ 
+}
+.icons:hover .icones-text{
+  opacity: 1;
+  justify-content: flex-end;
+  filter: drop-shadow(0 0 8px rgb(138, 192, 255));
+
+}
+
+
+
+.page-section {
+  height: 95vh;
+  display: flex;
+  font-size: 2rem;
+}
+
+
+
+.main-text{
+ margin-right: 100px;
+    color: rgb(240, 241, 243);
+   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   font-size: 32px;
+   margin-left: 900px;
+  margin-top: 100px;
+  position: absolute;
+   animation: introuduction 1.4s ease-in-out forwards;
+   filter: drop-shadow(0 0 6px rgb(3, 86, 133))
+
+}
+
+.AramJahan{
+  font-size: 28px;
+  padding: 20px;
+
+}
+.introuduction{
+  direction: rtl;
+    color: rgb(195, 211, 242);
+   font-size: 22px;
+   margin-left: 800px;
+  margin-top: 200px;
+  position: absolute;
+  opacity: 0;
+  line-height: 45px;
+  animation: introuduction 1.5s ease-in-out forwards;
+}
+
+.main-part{
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    animation:  fallFromTop 1.2s ease-out 0.5s forwards;
+    opacity: 0;
+    position: absolute;
+}
+.center-box{
+  position: relative;
+  width: 400px;
+  height: 420px;
+  border-radius: 20px;
+  margin-left: 100px;
+  margin-top: 80px;
+   margin-top: 120px;
+  background-color: rgb(140, 166, 176);
+}
+
+.face-picture{
+  position: absolute;
+  width: 350px;
+  height: 370px;
+  border-radius: 20px;
+  margin-left: 250px;
+  margin-top: 120px;
+ box-shadow: 0 0 25px rgba(3, 47, 79, 0.3);
+transition: transform 0.2s ease, box-shadow 0.3s ease;}
+
+.face-picture:hover{
+  transform: scale(1.01);
+  transition: 0.3s ease;
+}
+
+.information-box{
+  direction: rtl;
+color: rgb(195, 211, 242);
+width: 500px;
+height: 500px;
+border-radius: 20px;
+margin-top:80px;
+
+}
+.inf-item{
+  width: 120px;
+  height: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition:width 0.4s ease;
+  font-size: 19px;
+ background-color: transparent;
+  border:2px solid #c5e4f2 ;
+  color: rgb(255, 255, 255);
+  border-radius: 80px;
+  position: relative;
+  font-family:'Vazir', sans-serif;
+  right: 100px;
+  margin: 20px;
+   animation: breathing 3s ease-in-out infinite;
+   bottom: 0;
+  
+}
+.hide-info{
+  opacity: 0;
+  width: 0;
+  font-size: 21px;
+ transition: opacity 0.4s ease , width 0.4s ease;
+ position: absolute;
+ right: 160px;
+}
+
+
+.inf-item:hover{
+  justify-content: flex-start;
+  width: 300px;
+animation: shine 1s infinite;
+
+}
+
+
+
+.inf-item:hover .hide-info{
+opacity: 1;
+  animation: typing 1s steps(40) forwards;
+  /* border-right: 2px solid rgb(155, 164, 235); */
+    width: max-content;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* متن طولانی توضیحات */
+.information-text{
+  width: 590px;
+  height: 700px;
+    direction: rtl;
+  font-size: 21px;
+  color: rgb(215, 212, 245);
+    line-height: 50px;
+font-family:'Vazir', sans-serif;
+margin-top: 80px;
+margin-left: 80px;
+
+}
+
+.btw-line{
+  width: 5px;
+  height: 400px;
+  margin-left: 300px;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.4), transparent);
+animation: shine 1s infinite;
+border-radius: 10px;
+  animation:breathing 3s ease-in-out infinite;
+}
+
+
+.timeline {
+  margin-bottom:800px ;
+  position: relative;
+  direction: rtl;
+  padding-right: 30px;
+  display: flex;
+  margin-right: 60px;
+  margin-left:80px ;
+  top: 0;
+}
+
+
+.timeline-box {
+   width: 500px;
+  height: 380px;
+  position: absolute;
+  margin-bottom: 40px;
+    border-radius: 20px;
+     margin: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+  border-radius: 20px;
+  background-color: rgb(140, 166, 176);
+
+}
+
+
+.content {
+  direction: rtl;
+   width: 400px;
+   height: 280px;
+   padding: 20px;
+  background: rgba(5, 48, 81, 0.3);
+ border: 1px solid rgba(180, 203, 226, 0.25);
+  backdrop-filter: blur(60px);
+  transition: transform 0.3s ease;
+   position: absolute;
+  border-radius: 20px;
+  margin-left: 250px;
+  margin-top: 100px;
+ box-shadow:0 0 25px rgba(3, 47, 79, 0.3);
+transition: transform 0.2s ease, box-shadow 0.3s ease;}
+
+
+.content:hover {
+  transform: translateX(-10px);
+}
+
+.content h3 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.content p {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.status {
+  font-size: 24px;
+  color: #030a4b;
+  font-weight: bold;
+
+}
+
+
+
+
+
+
+
+@keyframes breathing {
+    0% {
+        box-shadow: 0 0 15px rgba(1, 19, 49, 0.4);
+    }
+    50% {
+        box-shadow: 0 0 35px rgba(48, 69, 102, 0.8);
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(3, 33, 84, 0.4);
+    }
+}
+@keyframes typing {
+  from {width: 0;}
+  to {width: 100px;}
+}
+
+
+@keyframes fallFromTop{
+  0%{
+    opacity: 0;
+    transform: translateX( -200px);
+  }
+ 100%{
+  opacity: 1;
+  transform: translateX(0);
+ }
+}
+
+@keyframes introuduction{
+  0%{
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+
+
+/* صفحه تبلت */
+
+@media (max-width:1100px) {
+ .main-text{
+  font-size: 24px;
+   margin-left: 550px;
+ }
+
+
+  .face-picture {
+    width: 200px ;
+    height: 210px;
+    margin-right: 80px;  
+  }
+  .center-box{
+    width: 250;
+    height: 260px;
+  margin-top: 120px;
+  margin-left: 80px;
+  }
+  .AramJahan{
+    font-size: 20px;
+   padding: 20px;
+  }
+  .introuduction{
+    font-size: 15px;
+     line-height: 33px;
+       margin-left: 500px;
+      margin-top: 210px;
+  }
+   .menu{
+    position: fixed;
+    right: 40px;
+    transform: translateX(50%);
+    backdrop-filter: blur(6px);
+       padding: 20px;
+
+  }
+
+  .icons {
+    width: 40px;
+    height: 40px;
+    padding: 30px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  .icons:hover {
+    transform: scale(1.1);
+    border-radius: 50%;
+    background-color: rgba(33, 70, 82, 0.15);
+  }
+
+  .icons img {
+    width: 35px;
+    height: 35px;
+  }
+
+
+  .icones-text {
+    font-size: 10px;
+  }
+
+}
+
+
+/* صفحه موبایل */
+@media (max-width: 700px) {
+ .main-text{
+  display: none;
+ }
+
+
+  .face-picture {
+    width: 180px ;
+    height: 190px;
+    margin-right: 80px;
+    margin-bottom: 60px;
+  
+  }
+  .center-box{
+    width: 210px;
+    height: 230px;
+  margin-top: 50px;
+  margin-left: 80px;
+  }
+  .AramJahan{
+    font-size: 20px;
+    margin-bottom: 50px;
+  }
+  .introuduction{
+    font-size: 13px;
+     line-height: 30px;
+       margin-left: 50px;
+      margin-top: 330px;
+  }
+   .menu{
+    position: fixed;
+    right: 40px;
+    transform: translateX(50%);
+    backdrop-filter: blur(6px);
+       padding: 20px;
+
+  }
+
+  .icons {
+    width: 40px;
+    height: 40px;
+    padding: 30px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+
+  .icons:hover {
+    transform: scale(1.1);
+    border-radius: 50%;
+    background-color: rgba(33, 70, 82, 0.15);
+  }
+
+  .icons img {
+    width: 30px;
+    height: 30px;
+  }
+
+
+  .icones-text {
+    font-size: 10px;
+  }
+
+}
+
+
+
+
