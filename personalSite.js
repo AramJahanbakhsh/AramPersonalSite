@@ -55,4 +55,50 @@ items.forEach(function(item , index){
     })
 })
 
-    
+let bars = document.querySelectorAll(".bar")
+let precents= document.querySelectorAll(".skill-precent")
+
+bars.forEach(function(bar , index){
+    let value = precents[index].innerHTML.replace("%" , "")
+    bar.style.width=value+ "%"
+})
+
+
+let sendbtn = document.getElementById("send")
+let inputs = document.querySelectorAll("#contact-form input, #contact-form textarea");
+inputs.forEach(input => {
+    sendbtn.addEventListener("click", function(){
+        if(input.value ===""){  
+            let inpvalue= input.value
+        inpvalue.style.borderColor="red"
+        }
+        
+    })
+});
+
+
+
+
+(function(){
+    emailjs.init("nxikHnDVK_OI2Xd8p");
+})();
+
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm("service_ft29qre", "template_p0kfz4k", this)
+    .then(() => {
+        sendbtn.innerHTML="پیام شما ارسال شد"
+        sendbtn.style.backgroundColor= "linear-gradient(90deg, #6effbbff, #4e63a0);"
+        inputs.forEach(input=>{
+            input.value=" "
+        })
+        setTimeout(() => {
+    sendbtn.innerHTML = "ارسال پیام";
+     }, 4000);
+
+    }, (err) => {
+        console.log(err);
+        alert("خطا در ارسال");
+    });
+});
